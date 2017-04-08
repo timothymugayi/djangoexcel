@@ -27,9 +27,10 @@ def main(base_dir):
 	# columns() returns column based iterator, meaning it can be iterated
 	# column by columz
 
-	number_of_rows = spreadsheet.number_of_rows() - 1
-	print('number_of_rows {rows}'.format(rows=number_of_rows))
+	number_of_excel_rows = spreadsheet.number_of_rows() - 1
+	print('number_of_rows {rows}'.format(rows=number_of_excel_rows))
 
+	number_of_db_rows = 0
 	# row_range() gives [0 .. number of rows]
 	for r in spreadsheet.row_range():
 		# column_range() gives [0 .. number of ranges
@@ -42,14 +43,14 @@ def main(base_dir):
 			order_date=spreadsheet.cell_value(r, 0), region=spreadsheet.cell_value(r, 1),
 			rep=spreadsheet.cell_value(r, 2), item=spreadsheet.cell_value(r, 3),
 			units=spreadsheet.cell_value(r, 4), unit_cost=spreadsheet.cell_value(r, 5), total=spreadsheet.cell_value(r, 6))
-
-		print(salesRecord)
+		if salesRecord:
+			print(salesRecord)
+			number_of_db_rows += 1
 
 	# lets run a sanity check here and ensure excel count and db count match
-	number_of_db_rows = SaleSumary.objects.count()
-	if number_of_rows != number_of_db_rows:
-		raise ValueError('number_of_db_rows={excel_rows} inconsistent with db_rows={db_rows}'.format(
-			excel_rows=number_of_rows, db_rows=number_of_db_rows))
+	if number_of_excel_rows != number_of_db_rows:
+		raise ValueError('number_of_excel_rows={excel_rows} inconsistent with db_rows={db_rows}'.format(
+			excel_rows=number_of_excel_rows, db_rows=number_of_db_rows))
 
 
 if __name__ == '__main__':
