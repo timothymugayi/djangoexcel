@@ -1,4 +1,4 @@
-#Sample Standalone Django app with pyexcel data import#
+# Sample Standalone Django app with pyexcel data import #
 
 Djangoexcel is sample project that illustrates how to execute a standalone Django script without using Django managed commands. Useful for running batch scripts with smaller datasets, where performance is negligible.
  
