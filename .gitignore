@@ -1,0 +1,4 @@
+venv/
+*.pyc
+sales/migrations/
+db.sqlite3

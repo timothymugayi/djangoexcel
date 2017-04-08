@@ -1,0 +1,16 @@
+appdirs==1.4.3
+Django==1.11
+et-xmlfile==1.0.1
+jdcal==1.3
+openpyxl==2.4.5
+packaging==16.8
+pyexcel==0.4.5
+pyexcel-io==0.3.3
+pyexcel-xls==0.3.1
+pyexcel-xlsx==0.3.0
+pyparsing==2.2.0
+pytz==2017.2
+six==1.10.0
+texttable==0.8.8
+xlrd==1.0.0
+xlwt==1.2.0
