@@ -4,7 +4,7 @@ Djangoexcel is sample project that illustrates how to execute a standalone Djang
  
 For illustration purpose project consists of the bare minimum settings required to run Django without the UI. Most of the settings.py entries have been stripped out including, Django admin, sessions, middleware and staticfiles apps. For your own personal projects, you may continue to keep these predefined Django modules and settings, but are not required when running a console based/backend app. 
 
-Django version 1.11
+Django version 1.10
 
 # Installation  #
 
